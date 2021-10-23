@@ -1,0 +1,72 @@
+@import "vars.scss";
+@import "mixins.scss";
+@import "null.scss";
+
+.visually_hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.d_none {
+  display: none;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  background-color: $neutral-placeholder;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__body {
+    min-height: 100%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: 40px 30px;
+    background-color: #fff;
+    width: 600px;
+  }
+}
+
+.list {
+  height: 80vh;
+  overflow: auto;
+  &__item {
+    margin-top: 40px;
+    .list-item__date {
+      margin-left: 50px;
+    }
+    .list-item__comment {
+      display: flex;
+      // margin-top: 10px;
+      .list-item__icon {
+        flex: 0 0 auto;
+        width: 30px;
+        height: 30px;
+        &.goal,
+        &.freekick {
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        &.goal {
+          background-image: url("../images/ball.jpg");
+        }
+        &.freekick {
+          background-image: url("../images/exclamation_mark.jpg");
+        }
+      }
+      .list-item__text {
+        margin-left: 20px;
+        padding-top: 13px;
+      }
+    }
+  }
+}
